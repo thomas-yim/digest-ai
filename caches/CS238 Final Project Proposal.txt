@@ -1,0 +1,37 @@
+Gupta, Liu, Shen
+1
+Deep Reinforcement Learning for Statistical Arbitrage
+Akash Gupta, Caleb Liu, Justin Shen
+1.0 Introduction:
+1.1 Computational Finance:
+The concept of applying rudimentary statistical and computational tools to financial
+markets has been around for numerous decades. More recently , with the development of
+advanced statistical and artificial intelligence methods such as deep reinforcement learning, there
+has been renewed interest in exploring the applications of computational finance.
+1.2 Statistical Arbitrage & Pairs T rading:
+Despite high levels of volatility and unpredictability in financial markets, one of the
+oldest and most supported theories in finance is the idea that all financial instruments (i.e.
+equities, options, etc.) are mean-reverting, meaning they will return to an average baseline, given
+enough time. One mathematical trading strategy that takes advantage of this theory is statistical
+arbitrage, which leverages statistical models to gauge when financial instruments stray away
+from their average behavior; oftentimes observed in the form of improper pricing. More
+specifically , one technique within statistical arbitrage is pairs trading. Pairs trading is a financial
+trading strategy that involves strategically buying and selling two historically correlated stocks.
+The crux of the strategy is to profit from the diver gence of the two prices, protecting oneself
+against market risk and profiting from market volatility . For example if Apple and Microsoft
+have stock prices that historically move in conjunction, they could be candidates for pairs
+trading. If there is a brief period of time where Apple goes up and Microsoft goes down, one
+would buy Microsoft and sell/short Apple, with the anticipation that they will conver ge at some
+point in the future when the markets revert back to their normal behavior , allowing the investor
+to profit on both ends.
+1.3 Problem Statement:
+Given the unpredictability correlation between the two prices, an extension of the
+stochastic nature of financial markets, using statistical, mathematical, and computational
+techniques to implement pairs trading is well-suited for a decision making under uncertainty
+problem. It requires making sequential decisions and predictions in a situation containing a highGupta, Liu, Shen
+2
+degree of uncertainty , while trying to maximize a reward (i.e. profits). Therefore, we propose the
+use of a deep reinforcement learning agent in order to attempt to maximize the potential profits
+observed in statistical arbitrage scenarios. We will run statistical simulations  (i.e. correlation and
+cointegration testing) of dozens of stocks in order to find a few pairs trading candidates that we
+will train our deep reinforcement learning agent on.

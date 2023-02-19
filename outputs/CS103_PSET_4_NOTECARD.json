@@ -1,0 +1,27 @@
+[
+    {
+        "term": "Pigeonhole Principle",
+        "definition": "A principle stating that if there are more objects than spaces, at least one space must contain more than one object.",
+        "starred": "False"
+    },
+    {
+        "term": "Theorem on Friends and Strangers",
+        "definition": "A theorem stating that for any pair of people in a party, they are either friends, strangers, or enemies.",
+        "starred": "False"
+    },
+    {
+        "term": "Injection",
+        "definition": "A function where each element of the domain is mapped to a unique element of the codomain.",
+        "starred": "False"
+    },
+    {
+        "term": "Surjective",
+        "definition": "A function where each element of the codomain is mapped to by at least one element of the domain.",
+        "starred": "False"
+    },
+    {
+        "term": "Bijective",
+        "definition": "A function that is both injective and surjective.",
+        "starred": "False"
+    }
+]

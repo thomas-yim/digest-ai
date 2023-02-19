@@ -1,0 +1,6 @@
+{
+    "bps": [
+        "This lecture discussed three approaches to crash recovery: consistency checks on reboot, ordered writes, and write-ahead logging.",
+        "Each approach has tradeoffs between durability, consistency, and performance, and many filesystems today implement logging to recover metadata operations after a crash."
+    ]
+}

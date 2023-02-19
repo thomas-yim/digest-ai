@@ -1,0 +1,6 @@
+{
+    "paragraphs": [
+        "This reference text discusses the various ways in which words can be related to each other, such as through synonymy, antonymy, similarity, relatedness, and connotation. It also introduces the linguistic principle of contrast, which states that a difference in form is always associated with a difference in meaning. Additionally, it mentions the work of Abb\u00e9 Gabriel Girard in 1718, who stated that there are no exact synonyms in any language. Finally, it explains the three affective dimensions of valence, arousal, and dominance, which were first identified by Osgood and collaborators in 1957.",
+        "The text also explains how words can be related to each other through semantic fields, which are sets of words that cover a particular semantic domain. It also mentions the SimLex-999 dataset, which gives values on a scale from 0 to 10 for near synonyms. Finally, it mentions the NRC Valence Arousal Dominance Lexicon, which provides values for the three affective dimensions of valence, arousal, and dominance."
+    ]
+}

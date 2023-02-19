@@ -1,0 +1,5 @@
+{
+    "paragraphs": [
+        "This reference text is for AA228/CS238: Decision Making Under Uncertainty, a course offered in Fall 2021 by Professor Mykel J. Kochenderfer. The course includes quizzes that can be taken on Gradescope, and students are allowed to consult any material (e.g., books, calculators, computer programs, and online resources) but not other people. The quiz is designed to be completed in 60 minutes, but students are given 90 minutes total to complete and submit their quiz. Questions involve decision making under uncertainty, such as determining the best course of action when feeling uncertain about whether a passport was forgotten at home. Solutions to the questions involve computing expected utility and using forward search to estimate the value function. The restricted gradient method is also discussed."
+    ]
+}

@@ -1,0 +1,27 @@
+[
+    {
+        "term": "AA228/CS238",
+        "definition": "A course at Stanford University about decision making under uncertainty.",
+        "starred": "False"
+    },
+    {
+        "term": "Mykel J. Kochenderfer",
+        "definition": "The professor of the course.",
+        "starred": "False"
+    },
+    {
+        "term": "Gradescope",
+        "definition": "The platform used to take the quizzes.",
+        "starred": "False"
+    },
+    {
+        "term": "MDP",
+        "definition": "Stands for Markov Decision Process.",
+        "starred": "False"
+    },
+    {
+        "term": "Kernel Smoothing",
+        "definition": "A method used to estimate the value function from values at discrete points in the state space.",
+        "starred": "False"
+    }
+]

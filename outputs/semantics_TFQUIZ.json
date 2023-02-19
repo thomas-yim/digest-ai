@@ -1,0 +1,22 @@
+[
+    {
+        "question": "The principle of contrast states that a difference in form is always associated with a difference in meaning.",
+        "answer": "True"
+    },
+    {
+        "question": "The SimLex-999 dataset gives values on a scale from 0 to 10 from near synonyms.",
+        "answer": "True"
+    },
+    {
+        "question": "Word relatedness is also traditionally called word association in psychology.",
+        "answer": "True"
+    },
+    {
+        "question": "Osgood and collaborators found that words vary along three important dimensions of affective meaning called valence, arousal, and dominance.",
+        "answer": "True"
+    },
+    {
+        "question": "Synonyms have the same meaning in some or all contexts.",
+        "answer": "True"
+    }
+]

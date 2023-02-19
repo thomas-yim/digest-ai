@@ -1,0 +1,22 @@
+[
+    {
+        "question": "If A\u2286B, then |A| \u2264 |B|.",
+        "answer": "True"
+    },
+    {
+        "question": "If U is the universal set discussed in problem 8\u2019s description, then |\u2118(U)| > |U|.",
+        "answer": "True"
+    },
+    {
+        "question": "If f:A\u2192A is a function and f3 is injective, then f is injective.",
+        "answer": "True"
+    },
+    {
+        "question": "If f:A\u2192A is a function and f3 is surjective, then f is surjective.",
+        "answer": "True"
+    },
+    {
+        "question": "If f:A\u2192A is a function and f3 is bijective, then f is bijective.",
+        "answer": "False"
+    }
+]

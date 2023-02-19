@@ -1,0 +1,14 @@
+{
+    "bps": [
+        "Word meaning in NLP systems is traditionally represented by spelling the word with small capital letters, however, this is an unsatisfactory model.",
+        "The linguistic study of word meaning has desiderata such as lemmas and senses, synonymy, similarity, word relatedness, antonymy, and connotation.",
+        "The principle of contrast states that a difference in form is always associated with a difference in meaning.",
+        "Abb\u00e9 Gabriel Girard argued in 1718 that there are no exact synonyms in any language.",
+        "Similar words are not synonyms, but share some element of meaning.",
+        "Word relatedness can be seen via semantic fields, such as hospitals, restaurants, and houses.",
+        "Antonyms are opposites with respect to only one feature of meaning, but are otherwise extremely similar.",
+        "Connotation is the aspect of a word's meaning that is related to a reader's emotions, sentiment, opinions, or evaluations.",
+        "Osgood et al. (1957) found that words vary along three affective dimensions: valence, arousal, and dominance.",
+        "Word senses have a complex many-to-many association with words and have relations with each other, such as synonymy, antonymy, similarity, relatedness, and connotation."
+    ]
+}

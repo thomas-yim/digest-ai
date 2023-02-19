@@ -1,0 +1,22 @@
+[
+    {
+        "question": "The concept of applying rudimentary statistical and computational tools to financial markets has been around for numerous decades.",
+        "answer": "True"
+    },
+    {
+        "question": "Pairs trading is a financial trading strategy that involves strategically buying and selling two historically uncorrelated stocks.",
+        "answer": "False"
+    },
+    {
+        "question": "The crux of the pairs trading strategy is to profit from the convergence of the two prices.",
+        "answer": "True"
+    },
+    {
+        "question": "We propose the use of a deep reinforcement learning agent to attempt to minimize the potential profits observed in statistical arbitrage scenarios.",
+        "answer": "False"
+    },
+    {
+        "question": "We will run statistical simulations of dozens of stocks in order to find a few pairs trading candidates that we will train our deep reinforcement learning agent on.",
+        "answer": "True"
+    }
+]

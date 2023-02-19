@@ -1,0 +1,22 @@
+[
+    {
+        "question": "Crash recovery can be implemented without making any design changes to the filesystem structure.",
+        "answer": "True"
+    },
+    {
+        "question": "The block cache is used to store frequently-used blocks accessed from disk.",
+        "answer": "True"
+    },
+    {
+        "question": "The fsck program runs on bootup to check the filesystem for consistency and repair any problems it can.",
+        "answer": "True"
+    },
+    {
+        "question": "Ordered Writes requires doing synchronous writes or tracking dependencies.",
+        "answer": "True"
+    },
+    {
+        "question": "Write-Ahead Logging is used to log metadata and file data operations before doing the operations.",
+        "answer": "False"
+    }
+]

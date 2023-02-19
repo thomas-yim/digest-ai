@@ -1,0 +1,27 @@
+[
+    {
+        "term": "Vector",
+        "definition": "A mathematical entity that has both magnitude and direction.",
+        "starred": "False"
+    },
+    {
+        "term": "Semantics",
+        "definition": "The study of meaning in language.",
+        "starred": "False"
+    },
+    {
+        "term": "Embeddings",
+        "definition": "A representation of a word or phrase in a vector space.",
+        "starred": "False"
+    },
+    {
+        "term": "Lemmas",
+        "definition": "The core stem of a word, where the word forms, like mice represent, different individual inflected or derived forms.",
+        "starred": "False"
+    },
+    {
+        "term": "Antonymy",
+        "definition": "Senses that are opposites with respect to only one feature of meaning.",
+        "starred": "False"
+    }
+]

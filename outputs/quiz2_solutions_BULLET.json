@@ -1,0 +1,9 @@
+{
+    "bps": [
+        "This reference text is about a quiz for a course on Decision Making Under Uncertainty.",
+        "The quiz is to be taken on Gradescope and students have 90 minutes to complete and submit it.",
+        "It contains 3 questions that involve decision-making under uncertainty and expected utility.",
+        "The third question involves using forward search to estimate the utility of a crying baby problem.",
+        "The last question involves using a restricted gradient method to update a policy parameter."
+    ]
+}

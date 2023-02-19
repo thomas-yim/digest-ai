@@ -1,0 +1,22 @@
+[
+    {
+        "question": "We can use a bitmap to track free blocks.",
+        "answer": "True"
+    },
+    {
+        "question": "We can use the block cache to store frequently-used disk blocks.",
+        "answer": "True"
+    },
+    {
+        "question": "We can use fsck to repair a filesystem after a crash.",
+        "answer": "True"
+    },
+    {
+        "question": "Ordered Writes requires synchronous writes.",
+        "answer": "False"
+    },
+    {
+        "question": "Write-Ahead Logging guarantees that all data will be preserved.",
+        "answer": "False"
+    }
+]

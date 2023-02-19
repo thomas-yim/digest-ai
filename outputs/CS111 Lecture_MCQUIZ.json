@@ -1,0 +1,66 @@
+[
+    {
+        "question": "What is the purpose of crash recovery in filesystems?",
+        "A": "To repair whatever can be repaired without filesystem changes",
+        "B": "To modify the write operations to always happen in particular orders",
+        "C": "To log metadata and optionally file data operations",
+        "D": "To prevent certain kinds of inconsistencies",
+        "answer": "A"
+    },
+    {
+        "question": "What is the most common approach to crash recovery?",
+        "A": "Consistency check on reboot (fsck)",
+        "B": "Ordered writes",
+        "C": "Write-ahead logging (journaling)",
+        "D": "Leaking resources",
+        "answer": "C"
+    },
+    {
+        "question": "What are the three main approaches to crash recovery?",
+        "A": "Consistency check on reboot, ordered writes, and leaking resources",
+        "B": "Consistency check on reboot, ordered writes, and write-ahead logging",
+        "C": "Consistency check on reboot, write-ahead logging, and leaking resources",
+        "D": "Ordered writes, write-ahead logging, and leaking resources",
+        "answer": "B"
+    },
+    {
+        "question": "What are the tradeoffs between crash recovery abilities and filesystem performance?",
+        "A": "Durability, consistency, and performance",
+        "B": "Repairing, modifying, and logging",
+        "C": "Consistency, durability, and logging",
+        "D": "Repairing, consistency, and durability",
+        "answer": "A"
+    },
+    {
+        "question": "What does fsck do?",
+        "A": "Modify the write operations to always happen in particular orders",
+        "B": "Log metadata and optionally file data operations",
+        "C": "Repair whatever can be repaired without filesystem changes",
+        "D": "Prevent certain kinds of inconsistencies",
+        "answer": "C"
+    },
+    {
+        "question": "What is the purpose of ordered writes?",
+        "A": "To prevent certain kinds of inconsistencies",
+        "B": "To repair whatever can be repaired without filesystem changes",
+        "C": "To modify the write operations to always happen in particular orders",
+        "D": "To log metadata and optionally file data operations",
+        "answer": "A"
+    },
+    {
+        "question": "What is the purpose of write-ahead logging?",
+        "A": "To prevent certain kinds of inconsistencies",
+        "B": "To modify the write operations to always happen in particular orders",
+        "C": "To log metadata and optionally file data operations",
+        "D": "To repair whatever can be repaired without filesystem changes",
+        "answer": "C"
+    },
+    {
+        "question": "What is the importance of crash recovery?",
+        "A": "To prevent certain kinds of inconsistencies",
+        "B": "To repair whatever can be repaired without filesystem changes",
+        "C": "To modify the write operations to always happen in particular orders",
+        "D": "To protect against disk failure",
+        "answer": "D"
+    }
+]

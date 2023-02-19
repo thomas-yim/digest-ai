@@ -1,0 +1,42 @@
+[
+    {
+        "question": "What is the principle of contrast in linguistics?",
+        "A": "A difference in form is always associated with a difference in meaning",
+        "B": "A difference in meaning is always associated with a difference in form",
+        "C": "A difference in form is always associated with a similarity in meaning",
+        "D": "A difference in meaning is always associated with a similarity in form",
+        "answer": "A"
+    },
+    {
+        "question": "What is the term for the relationship between words that are opposites with respect to only one feature of meaning?",
+        "A": "Synonymy",
+        "B": "Similarity",
+        "C": "Antonymy",
+        "D": "Relatedness",
+        "answer": "C"
+    },
+    {
+        "question": "What is the term for the relationship between words that share some element of meaning, but are not synonyms?",
+        "A": "Synonymy",
+        "B": "Similarity",
+        "C": "Antonymy",
+        "D": "Relatedness",
+        "answer": "D"
+    },
+    {
+        "question": "What is the term for the relationship between words that are similar, but not synonyms?",
+        "A": "Synonymy",
+        "B": "Similarity",
+        "C": "Antonymy",
+        "D": "Relatedness",
+        "answer": "B"
+    },
+    {
+        "question": "What is the term for the relationship between words that have the same meaning in some or all contexts?",
+        "A": "Synonymy",
+        "B": "Similarity",
+        "C": "Antonymy",
+        "D": "Relatedness",
+        "answer": "A"
+    }
+]

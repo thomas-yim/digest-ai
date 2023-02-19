@@ -1,0 +1,1090 @@
+Finite Automata
+Part ThreeRecap from Last Time:
+Some NFA Design Examples Designing NFAs
+●Embrace the nondeterminism!
+●Good model: Guess-and-check :
+●Is there some information that you'd really 
+like to have? Have the machine 
+nondeterministically  guess that information.
+●Then, have the machine deterministically 
+check that the choice was correct.Guess-and-Check
+L = { w ∈ {0, 1}* | w ends in 010 or 101 }Guess-and-Check
+L = { w ∈ {0, 1}* | w ends in 010 or 101 }
+Ask yourself these design questions:
+Would it be really easy to design an 
+NFA to detect the substring 010 at the 
+end, if you knew that’s what you were 
+looking for, and when you’d reached 
+the near-end? 
+Would it be really easy to design an 
+NFA to detect the substring 101, if you 
+knew that’s what you were looking for, 
+and when you’d reached the near-end ?
+Would it be really convenient if you 
+could just magically guess  that?Ask yourself these design questions:
+Would it be really easy to design an 
+NFA to detect the substring 010 at the 
+end, if you knew that’s what you were 
+looking for, and when you’d reached 
+the near-end? 
+Would it be really easy to design an 
+NFA to detect the substring 101, if you 
+knew that’s what you were looking for, 
+and when you’d reached the near-end ?
+Would it be really convenient if you 
+could just magically guess  that?Guess-and-Check
+L = { w ∈ {0, 1}* | w ends in 010 or 101 }
+01 0
+10 1        Σ
+        ΣGuess-and-Check
+L = { w ∈ {0, 1}* | w ends in 010 or 101 }
+01 0
+10 1startε          
+ε                  Σ
+        Σ“Magic Guessing” nondeterminism is pretty useful!“Magic Guessing” nondeterminism is pretty useful!Guess-and-Check
+L = { w ∈ {0, 1}* | w ends in 010 or 101 }
+NFA Design Hack!
+If you can write the language as the union of two or more very 
+simple languages:
+(1) make simple DFA/NFAs for those simple languages
+(2) a single start state dispatches to the simple DFA/NFAs 
+using epsilon transitionsNFA Design Hack!
+If you can write the language as the union of two or more very 
+simple languages:
+(1) make simple DFA/NFAs for those simple languages
+(2) a single start state dispatches to the simple DFA/NFAs 
+using epsilon transitionsL
+1 = { w ∈ {0, 1}* | w ends in 010 }
+L
+2 = { w ∈ {0, 1}* | w ends in 101 }    = L
+1 ∪ L
+2  where:Guess-and-Check
+L = { w ∈ {0, 1}* | w ends in 010 or 101 }
+01 0
+10 1        Σ
+        ΣL2 = { w ∈ {0, 1}* | w ends in 101} L1 = { w ∈ {0, 1}* | w ends in 010 }Guess-and-Check
+L = { w ∈ {0, 1}* | w ends in 010 or 101 }
+01 0
+10 1startε          
+ε                  Σ
+        ΣL1 ∪ L2Guess-and-Check
+L = { w ∈ {0, 1}* | w ends in 010 or 101 }
+01 00
+    1
+1            1    0
+0 10     
+1            0    
+1startGuess-and-Check
+L = { w ∈ {a, b, c}* | at least one of a, b, or c is not in w }Guess-and-Check
+L = { w ∈ {a, b, c}* | at least one of a, b, or c is not in w }
+Ask yourself these design questions:
+Would it be really easy to design an 
+NFA to detect the string... 
+...has no a’s in it, if you knew that’s 
+what you were looking for? 
+...has no b’s in it, if you knew that’s 
+what you were looking for?
+..has no c’s in it, if you knew that’s 
+what you were looking for?
+ 
+Would it be really convenient if you 
+could just magically guess  which letter is 
+the missing one this time?Ask yourself these design questions:
+Would it be really easy to design an 
+NFA to detect the string... 
+...has no a’s in it, if you knew that’s 
+what you were looking for? 
+...has no b’s in it, if you knew that’s 
+what you were looking for?
+..has no c’s in it, if you knew that’s 
+what you were looking for?
+ 
+Would it be really convenient if you 
+could just magically guess  which letter is 
+the missing one this time?Guess-and-Check
+L = { w ∈ {a, b, c}* | at least one of a, b, or c is not in w }
+Ask yourself these design questions:
+Would it be really easy to design an 
+NFA to detect the string... 
+...has no a’s in it, if you knew that’s 
+what you were looking for? 
+...has no b’s in it, if you knew that’s 
+what you were looking for?
+..has no c’s in it, if you knew that’s 
+what you were looking for?
+ 
+Would it be really convenient if you 
+could just magically guess  which letter is 
+the missing one this time?Ask yourself these design questions:
+Would it be really easy to design an 
+NFA to detect the string... 
+...has no a’s in it, if you knew that’s 
+what you were looking for? 
+...has no b’s in it, if you knew that’s 
+what you were looking for?
+..has no c’s in it, if you knew that’s 
+what you were looking for?
+ 
+Would it be really convenient if you 
+could just magically guess  which letter is 
+the missing one this time?L1 = { w ∈ {a, b, c}* | a is not in w }
+L2 = { w ∈ {a, b, c}* | b is not in w }
+L3 = { w ∈ {a, b, c}* | c is not in w }
+L = L
+1 ∪ L
+2 ∪ L
+3Guess-and-Check
+L = { w ∈ {a, b, c}* | at least one of a, b, or c is not in w } = L1 ∪ L2 ∪ L3
+a, b
+a, c
+b, cstart  ε          
+ε
+ε          
+L1 = { w ∈ {a, b, c}* | a is not in w }L2 = { w ∈ {a, b, c}* | b is not in w }L3 = { w ∈ {a, b, c}* | c is not in w }Guess-and-Check
+L = { w ∈ {a, b, c}* | at least one of a, b, or c is not in w }
+a
+b
+ca
+ba, b
+c
+           a    
+c   
+    b
+cc   
+a          
+ba, c
+b, cb
+a       Σstart  New Stuff!NFAs and DFAs
+●Any language that can be accepted by a 
+DFA can be accepted by an NFA.
+●Why?
+●Every DFA essentially already is an NFA!NFAs and DFAs
+●Any language that can be accepted by a 
+DFA can be accepted by an NFA.
+●Why?
+●Every DFA essentially already is an NFA!
+●Question : Can any language accepted by 
+an NFA also be accepted by a DFA?NFAs and DFAs
+●Any language that can be accepted by a 
+DFA can be accepted by an NFA.
+●Why?
+●Every DFA essentially already is an NFA!
+●Question : Can any language accepted by 
+an NFA also be accepted by a DFA?
+●Surprisingly, the answer is yes!NFAs and DFAs
+●Question : Can any language accepted by 
+an NFA also be accepted by a DFA?
+●Surprisingly, the answer is yes!
+●To prove this, we need to:
+–Pick an arbitrary NFA
+–Describe how we would construct a DFA with the 
+same language (in a generalizable way)
+–For the next few slides, we’ll ponder how to 
+approach that...Thought Experiment:
+How would you simulate an NFA in 
+software?q₃q₃ q₂ q₁ q₂ q₀ q₁ q₀start a bΣ
+aq₃q₃q₃ q₂ q₁ q₂ q₀ q₁ q₀start a bΣ
+aq₃
+a b a a bq₃q₃ q₂ q₁ q₂ q₀ q₁ q₀start a bΣ
+aq₃
+a b a a bq₃q₃ q₂ q₁ q₂ q₀ q₁ q₀start a bΣ
+aq₃
+a b a a bq₃q₃ q₂ q₁ q₂ q₀ q₁ q₀start a bΣ
+aq₃
+a b a a bq₃q₃ q₂ q₁ q₂ q₀ q₁ q₀start a bΣ
+aq₃
+a b a a bq₃q₃ q₂ q₁ q₂ q₀ q₁ q₀start a bΣ
+aq₃
+a b a a bq₃q₃ q₂ q₁ q₂ q₀ q₁ q₀start a bΣ
+aq₃
+a b a a bq₃q₃ q₂ q₁ q₂ q₀ q₁ q₀start a bΣ
+aq₃
+a b a a bq₃q₃ q₂ q₁ q₂ q₀ q₁ q₀start a bΣ
+aq₃
+a b a a bq₃q₃ q₂ q₁ q₂ q₀ q₁ q₀start a bΣ
+aq₃
+a b a a bq₃q₃ q₂ q₁ q₂ q₀ q₁ q₀start a bΣ
+aq₃
+a b a a bq₃q₃ q₂ q₁ q₂ q₀ q₁ q₀start a bΣ
+aq₃
+a b a a bq₃q₃ q₂ q₁ q₂ q₀ q₁ q₀start a bΣ
+aq₃
+a b a a bq₃q₃ q₂ q₁ q₂ q₀ q₁ q₀start a bΣ
+aq₃
+a b a a bq₃q₃ q₂ q₁ q₂ q₀ q₁ q₀start a bΣ
+aq₃
+a ? ? ? ? … ? ? ? … ?q₃q₃ q₂ q₁ q₂ q₀ q₁ q₀start a bΣ
+aq₃
+a ? ? ? ? … ? ? ? … ?q₃q₃ q₂ q₁ q₂ q₀ q₁ q₀start a bΣ
+aq₃
+a ? ? ? ? … ? ? ? … ?q₃q₃ q₂ q₁ q₂ q₀ q₁ q₀start a bΣ
+aq₃
+a ? ? ? ? … ? ? ? … ?q₃q₃ q₂ q₁ q₂ q₀ q₁ q₀start a bΣ
+aq₃
+a ? ? ? ? … ? ? ? … ?q₃q₃ q₂ q₁ q₂ q₀ q₁ q₀start a bΣ
+aq₃
+a ? ? ? ? … ? ? ? … ?q₃q₃ q₂ q₁ q₂ q₀ q₁ q₀start a bΣ
+aq₃
+a ? ? ? ? … ? ? ? … ?q₃q₃ q₂ q₁ q₂ q₀ q₁ q₀start a bΣ
+aq₃
+{q₀}a
+{q₀, q₁}q₃q₃ q₂ q₁ q₂ q₀ q₁ q₀start a bΣ
+aq₃
+{q₀}a
+{q₀, q₁}bq₃q₃ q₂ q₁ q₂ q₀ q₁ q₀start a bΣ
+aq₃
+{q₀}a
+{q₀, q₁}bq₃q₃ q₂ q₁ q₂ q₀ q₁ q₀start a bΣ
+aq₃
+{q₀}a
+{q₀, q₁}bq₃q₃ q₂ q₁ q₂ q₀ q₁ q₀start a bΣ
+aq₃
+{q₀}a
+{q₀, q₁}b
+{q₀}q₃q₃ q₂ q₁ q₂ q₀ q₁ q₀start a bΣ
+aq₃
+{q₀}a
+{q₀, q₁}b
+{q₀}q₃q₃ q₂ q₁ q₂ q₀ q₁ q₀start a bΣ
+aq₃
+{q₀}a
+{q₀, q₁}b
+{q₀}q₃q₃ q₂ q₁ q₂ q₀ q₁ q₀start a bΣ
+aq₃
+{q₀}a
+{q₀, q₁}
+{q₀, q₁}b
+{q₀}q₃q₃ q₂ q₁ q₂ q₀ q₁ q₀start a bΣ
+aq₃
+{q₀}a
+{q₀, q₁}
+{q₀, q₁}b
+{q₀}q₃q₃ q₂ q₁ q₂ q₀ q₁ q₀start a bΣ
+aq₃
+{q₀}a
+{q₀, q₁}
+{q₀, q₁}b
+{q₀}q₃q₃ q₂ q₁ q₂ q₀ q₁ q₀start a bΣ
+aq₃
+{q₀}a
+{q₀, q₁}
+{q₀, q₁}b
+{q₀}q₃q₃ q₂ q₁ q₂ q₀ q₁ q₀start a bΣ
+aq₃
+{q₀}a
+{q₀, q₁}
+{q₀, q₁}b
+{q₀}q₃q₃ q₂ q₁ q₂ q₀ q₁ q₀start a bΣ
+aq₃
+{q₀}a
+{q₀, q₁}
+{q₀, q₁}b
+{q₀}q₃q₃ q₂ q₁ q₂ q₀ q₁ q₀start a bΣ
+aq₃
+{q₀}a
+{q₀, q₁}
+{q₀, q₁}b
+{q₀}q₃q₃ q₂ q₁ q₂ q₀ q₁ q₀start a bΣ
+aq₃
+{q₀}a
+{q₀, q₁}
+{q₀, q₁} {q₀, q₁}b
+{q₀}q₃q₃ q₂ q₁ q₂ q₀ q₁ q₀start a bΣ
+aq₃
+{q₀}a
+{q₀, q₁}
+{q₀, q₁} {q₀, q₁}b
+{q₀}q₃q₃ q₂ q₁ q₂ q₀ q₁ q₀start a bΣ
+aq₃
+{q₀}a
+{q₀, q₁}
+{q₀, q₁} {q₀, q₁}b
+{q₀}q₃q₃ q₂ q₁ q₂ q₀ q₁ q₀start a bΣ
+aq₃
+{q₀}a
+{q₀, q₁}
+{q₀, q₁} {q₀, q₁}b
+{q₀}q₃q₃ q₂ q₁ q₂ q₀ q₁ q₀start a bΣ
+aq₃
+{q₀}a
+{q₀, q₁}
+{q₀, q₁} {q₀, q₁}b
+{q₀}q₃q₃ q₂ q₁ q₂ q₀ q₁ q₀start a bΣ
+aq₃
+{q₀}a
+{q₀, q₁}
+{q₀, q₁} {q₀, q₁}b
+{q₀}
+{q₀, q₂}q₃q₃ q₂ q₁ q₂ q₀ q₁ q₀start a bΣ
+aq₃
+{q₀}a
+{q₀, q₁}
+{q₀, q₁} {q₀, q₁}b
+{q₀}
+{q₀, q₂}q₃q₃ q₂ q₁ q₂ q₀ q₁ q₀start a bΣ
+aq₃
+{q₀}a
+{q₀, q₁}
+{q₀, q₁} {q₀, q₁}
+{q₀, q₂}b
+{q₀}
+{q₀, q₂}q₃q₃ q₂ q₁ q₂ q₀ q₁ q₀start a bΣ
+aq₃
+{q₀}a
+{q₀, q₁}
+{q₀, q₁} {q₀, q₁}
+{q₀, q₂}b
+{q₀}
+{q₀, q₂}q₃q₃ q₂ q₁ q₂ q₀ q₁ q₀start a bΣ
+aq₃
+{q₀}a
+{q₀, q₁}
+{q₀, q₁} {q₀, q₁}
+{q₀, q₂}b
+{q₀}
+{q₀, q₂}q₃q₃ q₂ q₁ q₂ q₀ q₁ q₀start a bΣ
+aq₃
+{q₀}a
+{q₀, q₁}
+{q₀, q₁} {q₀, q₁}
+{q₀, q₂}b
+{q₀}
+{q₀, q₂}q₃q₃ q₂ q₁ q₂ q₀ q₁ q₀start a bΣ
+aq₃
+{q₀}a
+{q₀, q₁}
+{q₀, q₁} {q₀, q₁}
+{q₀, q₂}b
+{q₀}
+{q₀, q₂}q₃q₃ q₂ q₁ q₂ q₀ q₁ q₀start a bΣ
+aq₃
+{q₀}a
+{q₀, q₁}
+{q₀, q₁} {q₀, q₁}
+{q₀, q₂}b
+{q₀}
+{q₀, q₂}q₃q₃ q₂ q₁ q₂ q₀ q₁ q₀start a bΣ
+aq₃
+{q₀}a
+{q₀, q₁}
+{q₀, q₁} {q₀, q₁}
+{q₀, q₂} {q₀, q₁, q₃}b
+{q₀}
+{q₀, q₂}q₃q₃ q₂ q₁ q₂ q₀ q₁ q₀start a bΣ
+aq₃
+{q₀}a
+{q₀, q₁}
+{q₀, q₁} {q₀, q₁}
+{q₀, q₂} {q₀, q₁, q₃}b
+{q₀}
+{q₀, q₂}q₃q₃ q₂ q₁ q₂ q₀ q₁ q₀start a bΣ
+aq₃
+{q₀}a
+{q₀, q₁}
+{q₀, q₁} {q₀, q₁}
+{q₀, q₂} {q₀, q₁, q₃}b
+{q₀}
+{q₀, q₂}q₃q₃ q₂ q₁ q₂ q₀ q₁ q₀start a bΣ
+aq₃
+{q₀}a
+{q₀, q₁}
+{q₀, q₁} {q₀, q₁}
+{q₀, q₂} {q₀, q₁, q₃}b
+{q₀}
+{q₀, q₂}q₃q₃ q₂ q₁ q₂ q₀ q₁ q₀start a bΣ
+aq₃
+{q₀}a
+{q₀, q₁}
+{q₀, q₁} {q₀, q₁}
+{q₀, q₂} {q₀, q₁, q₃}b
+{q₀}
+{q₀, q₂}q₃q₃ q₂ q₁ q₂ q₀ q₁ q₀start a bΣ
+aq₃
+{q₀}a
+{q₀, q₁}
+{q₀, q₁} {q₀, q₁}
+{q₀, q₂} {q₀, q₁, q₃}b
+{q₀}
+{q₀, q₂}q₃q₃ q₂ q₁ q₂ q₀ q₁ q₀start a bΣ
+aq₃
+{q₀}a
+{q₀, q₁}
+{q₀, q₁} {q₀, q₁}
+{q₀, q₂} {q₀, q₁, q₃}b
+{q₀}
+{q₀, q₂}q₃q₃ q₂ q₁ q₂ q₀ q₁ q₀start a bΣ
+aq₃
+{q₀}a
+{q₀, q₁}
+{q₀, q₁} {q₀, q₁}
+{q₀, q₂} {q₀, q₁, q₃}b
+{q₀}
+{q₀, q₂}
+{q₀}q₃q₃ q₂ q₁ q₂ q₀ q₁ q₀start a bΣ
+aq₃
+{q₀}a
+{q₀, q₁}
+{q₀, q₁} {q₀, q₁}
+{q₀, q₂} {q₀, q₁, q₃}b
+{q₀}
+{q₀, q₂}
+{q₀}q₃q₃ q₂ q₁ q₂ q₀ q₁ q₀start a bΣ
+aq₃
+{q₀}a
+{q₀, q₁}
+{q₀, q₁} {q₀, q₁}
+{q₀, q₂} {q₀, q₁, q₃}
+{q₀, q₁, q₃}b
+{q₀}
+{q₀, q₂}
+{q₀}q₃q₃ q₂ q₁ q₂ q₀ q₁ q₀start a bΣ
+aq₃
+{q₀}a
+{q₀, q₁}
+{q₀, q₁} {q₀, q₁}
+{q₀, q₂} {q₀, q₁, q₃}
+{q₀, q₁, q₃}b
+{q₀}
+{q₀, q₂}
+{q₀}q₃q₃ q₂ q₁ q₂ q₀ q₁ q₀start a bΣ
+aq₃
+{q₀}a
+{q₀, q₁}
+{q₀, q₁} {q₀, q₁}
+{q₀, q₂} {q₀, q₁, q₃}
+{q₀, q₁, q₃}b
+{q₀}
+{q₀, q₂}
+{q₀}q₃q₃ q₂ q₁ q₂ q₀ q₁ q₀start a bΣ
+aq₃
+{q₀}a
+{q₀, q₁}
+{q₀, q₁} {q₀, q₁}
+{q₀, q₂} {q₀, q₁, q₃}
+{q₀, q₁, q₃}b
+{q₀}
+{q₀, q₂}
+{q₀}q₃q₃ q₂ q₁ q₂ q₀ q₁ q₀start a bΣ
+aq₃
+{q₀}a
+{q₀, q₁}
+{q₀, q₁} {q₀, q₁}
+{q₀, q₂} {q₀, q₁, q₃}
+{q₀, q₁, q₃}b
+{q₀}
+{q₀, q₂}
+{q₀}q₃q₃ q₂ q₁ q₂ q₀ q₁ q₀start a bΣ
+aq₃
+{q₀}a
+{q₀, q₁}
+{q₀, q₁} {q₀, q₁}
+{q₀, q₂} {q₀, q₁, q₃}
+{q₀, q₁, q₃}b
+{q₀}
+{q₀, q₂}
+{q₀}q₃q₃ q₂ q₁ q₂ q₀ q₁ q₀start a bΣ
+aq₃
+{q₀}a
+{q₀, q₁}
+{q₀, q₁} {q₀, q₁}
+{q₀, q₂} {q₀, q₁, q₃}
+{q₀, q₁, q₃} {q₀, q₁}b
+{q₀}
+{q₀, q₂}
+{q₀}q₃q₃ q₂ q₁ q₂ q₀ q₁ q₀start a bΣ
+aq₃
+{q₀}a
+{q₀, q₁}
+{q₀, q₁} {q₀, q₁}
+{q₀, q₂} {q₀, q₁, q₃}
+{q₀, q₁, q₃} {q₀, q₁}b
+{q₀}
+{q₀, q₂}
+{q₀}q₃q₃ q₂ q₁ q₂ q₀ q₁ q₀start a bΣ
+aq₃
+{q₀}a
+{q₀, q₁}
+{q₀, q₁} {q₀, q₁}
+{q₀, q₂} {q₀, q₁, q₃}
+{q₀, q₁, q₃} {q₀, q₁}b
+{q₀}
+{q₀, q₂}
+{q₀}q₃q₃ q₂ q₁ q₂ q₀ q₁ q₀start a bΣ
+aq₃
+{q₀}a
+{q₀, q₁}
+{q₀, q₁} {q₀, q₁}
+{q₀, q₂} {q₀, q₁, q₃}
+{q₀, q₁, q₃} {q₀, q₁}b
+{q₀}
+{q₀, q₂}
+{q₀}q₃q₃ q₂ q₁ q₂ q₀ q₁ q₀start a bΣ
+aq₃
+{q₀}a
+{q₀, q₁}
+{q₀, q₁} {q₀, q₁}
+{q₀, q₂} {q₀, q₁, q₃}
+{q₀, q₁, q₃} {q₀, q₁}b
+{q₀}
+{q₀, q₂}
+{q₀}q₃q₃ q₂ q₁ q₂ q₀ q₁ q₀start a bΣ
+aq₃
+{q₀}a
+{q₀, q₁}
+{q₀, q₁} {q₀, q₁}
+{q₀, q₂} {q₀, q₁, q₃}
+{q₀, q₁, q₃} {q₀, q₁}b
+{q₀}
+{q₀, q₂}
+{q₀}q₃q₃ q₂ q₁ q₂ q₀ q₁ q₀start a bΣ
+aq₃
+{q₀}a
+{q₀, q₁}
+{q₀, q₁} {q₀, q₁}
+{q₀, q₂} {q₀, q₁, q₃}
+{q₀, q₁, q₃} {q₀, q₁}b
+{q₀}
+{q₀, q₂}
+{q₀}q₃q₃ q₂ q₁ q₂ q₀ q₁ q₀start a bΣ
+aq₃
+{q₀}a
+{q₀, q₁}
+{q₀, q₁} {q₀, q₁}
+{q₀, q₂} {q₀, q₁, q₃}
+{q₀, q₁, q₃} {q₀, q₁}b
+{q₀}
+{q₀, q₂}
+{q₀}
+{q₀, q₂}q₃q₃ q₂ q₁ q₂ q₀ q₁ q₀start a bΣ
+aq₃
+{q₀}a
+{q₀, q₁}
+{q₀, q₁} {q₀, q₁}
+{q₀, q₂} {q₀, q₁, q₃}
+{q₀, q₁, q₃} {q₀, q₁}b
+{q₀}
+{q₀, q₂}
+{q₀}
+{q₀, q₂}q₃q₃ q₂ q₁ q₂ q₀ q₁ q₀start a bΣ
+aq₃
+{q₀}a b
+{q₀, q₁} {q₀}
+{q₀, q₁} {q₀, q₁} {q₀, q₂}
+{q₀, q₂} {q₀, q₁, q₃} {q₀}
+{q₀, q₁, q₃} {q₀, q₁} {q₀, q₂}
+{q₀} {q₀, q₁}
+{q₀, q₂}b
+a
+   b
+a  b
+b  astart
+{q₀, q₁, q₃}aq₃q₃ q₂ q₁ q₂ q₀ q₁ q₀start a bΣ
+aq₃
+{q₀}a b
+{q₀, q₁} {q₀}
+{q₀, q₁} {q₀, q₁} {q₀, q₂}
+{q₀, q₂} {q₀, q₁, q₃} {q₀}
+{q₀, q₁, q₃} {q₀, q₁} {q₀, q₂}
+{q₀} {q₀, q₁}
+{q₀, q₂}b
+a
+   b
+a  b
+b  astart
+{q₀, q₁, q₃}aq₃q₃ q₂ q₁ q₂ q₀ q₁ q₀start a bΣ
+aq₃
+{q₀}a b
+{q₀, q₁} {q₀}
+{q₀, q₁} {q₀, q₁} {q₀, q₂}
+{q₀, q₂} {q₀, q₁, q₃} {q₀}
+*{q₀, q₁, q₃} {q₀, q₁} {q₀, q₂}
+{q₀} {q₀, q₁}
+{q₀, q₂}b
+a
+   b
+a  b
+b  astart
+{q₀, q₁, q₃}aq₃q₃ q₂ q₁ q₂ q₀ q₁ q₀start a bΣ
+aq₃
+{q₀}a b
+{q₀, q₁} {q₀}
+{q₀, q₁} {q₀, q₁} {q₀, q₂}
+{q₀, q₂} {q₀, q₁, q₃} {q₀}
+*{q₀, q₁, q₃} {q₀, q₁} {q₀, q₂}
+{q₀} {q₀, q₁}
+{q₀, q₂}b
+a
+   b
+a  b
+b  astart
+{q₀, q₁, q₃}aq₃q₃ q₂ q₁ q₂ q₀ q₁ q₀start a bΣ
+aq₃
+{q₀}a b
+{q₀, q₁} {q₀}
+{q₀, q₁} {q₀, q₁} {q₀, q₂}
+{q₀, q₂} {q₀, q₁, q₃} {q₀}
+*{q₀, q₁, q₃} {q₀, q₁} {q₀, q₂}
+{q₀} {q₀, q₁}
+{q₀, q₂}b
+a
+   b
+a  b
+b  astart
+{q₀, q₁, q₃}aq₃q₃ q₂ q₁ q₂ q₀ q₁ q₀start a bΣ
+aq₃
+{q₀} {q₀, q₁}
+{q₀, q₂}b
+a
+   b
+a  b
+b  astart
+{q₀, q₁, q₃}aa b a a b aq₃q₃ q₂ q₁ q₂ q₀ q₁ q₀start a bΣ
+aq₃
+{q₀} {q₀, q₁}
+{q₀, q₂}b
+a
+   b
+a  b
+b  astart
+{q₀, q₁, q₃}aa b a a b aq₃q₃ q₂ q₁ q₂ q₀ q₁ q₀start a bΣ
+aq₃
+{q₀} {q₀, q₁}
+{q₀, q₂}b
+a
+   b
+a  b
+b  astart
+{q₀, q₁, q₃}aa b a a b aq₃q₃ q₂ q₁ q₂ q₀ q₁ q₀start a bΣ
+aq₃
+{q₀} {q₀, q₁}
+{q₀, q₂}b
+a
+   b
+a  b
+b  astart
+{q₀, q₁, q₃}aa b a a b aq₃q₃ q₂ q₁ q₂ q₀ q₁ q₀start a bΣ
+aq₃
+{q₀} {q₀, q₁}
+{q₀, q₂}b
+a
+   b
+a  b
+b  astart
+{q₀, q₁, q₃}aa b a a b aq₃q₃ q₂ q₁ q₂ q₀ q₁ q₀start a bΣ
+aq₃
+{q₀} {q₀, q₁}
+{q₀, q₂}b
+a
+   b
+a  b
+b  astart
+{q₀, q₁, q₃}aa b a a b aq₃q₃ q₂ q₁ q₂ q₀ q₁ q₀start a bΣ
+aq₃
+{q₀} {q₀, q₁}
+{q₀, q₂}b
+a
+   b
+a  b
+b  astart
+{q₀, q₁, q₃}aa b a a b aq₃q₃ q₂ q₁ q₂ q₀ q₁ q₀start a bΣ
+aq₃
+{q₀} {q₀, q₁}
+{q₀, q₂}b
+a
+   b
+a  b
+b  astart
+{q₀, q₁, q₃}aa b a a b aq₃q₃ q₂ q₁ q₂ q₀ q₁ q₀start a bΣ
+aq₃
+{q₀} {q₀, q₁}
+{q₀, q₂}b
+a
+   b
+a  b
+b  astart
+{q₀, q₁, q₃}aa b a a b aThe Subset Construction
+●This procedure for turning an NFA for a language L into a 
+DFA for a language L is called the subset construction .
+●It’s sometimes called the powerset construction ; it’s different 
+names for the same thing!
+●Intuitively:
+●Each state in the DFA corresponds to a set of states from the NFA.
+●Each transition in the DFA corresponds to what transitions would 
+be taken in the NFA when using the massive parallel intuition.
+●The accepting states in the DFA correspond to which sets of states 
+would be considered accepting in the NFA when using the massive 
+parallel intuition.
+●There’s an online Guide to the Subset Construction  with 
+a more elaborate example involving ε-transitions and cases 
+where the NFA dies; check that for more details.The Subset Construction
+●In converting an NFA to a DFA, the DFA's 
+states correspond to sets of NFA states.
+●Useful fact:  |℘(S)| = 2|S| for any finite set 
+S.
+●In the worst-case, the construction can 
+result in a DFA that is exponentially larger  
+than the original NFA.
+●Question to ponder:  Can you find a family 
+of languages that have NFAs of size n, but 
+no DFAs of size less than 2n?A language L is called a regular language  
+if there exists a DFA D such that ( ℒD) = L.An Important Result
+Theorem:  A language L is regular if and only if
+there is some NFA N such that ( ℒN) = L.
+ 
+Proof Sketch:  Pick a language L. First, assume
+L is regular. That means there’s a DFA D where
+(ℒD) = L. Every DFA is “basically” an NFA, so
+there’s an NFA ( D) whose language is L.
+ 
+Next, assume there’s an NFA N such that
+(ℒN) = L. Using the subset construction, we
+can build a DFA D where ( ℒN) = (ℒD). Then
+we have that ( ℒD) = L, so L is regular. ■ -ishWhy This Matters
+●We now have two perspectives on regular 
+languages:
+●Regular languages are languages accepted 
+by DFAs.
+●Regular languages are languages accepted 
+by NFAs.
+●We can now reason about the regular 
+languages in two different ways.Properties of Regular LanguagesThe Union of Two Languages
+●If L1 and L2 are languages over the alphabet Σ, the 
+language L1 ∪ L2 is the language of all strings in at 
+least one of the two languages.
+●If L1 and L2 are regular languages, is L1 ∪ L2?The Union of Two Languages
+Machine for L1start
+start Machine for L2●If L1 and L2 are languages over the alphabet Σ, the 
+language L1 ∪ L2 is the language of all strings in at 
+least one of the two languages.
+●If L1 and L2 are regular languages, is L1 ∪ L2?The Union of Two Languages
+start  start
+startMachine for L1
+Machine for L2●If L1 and L2 are languages over the alphabet Σ, the 
+language L1 ∪ L2 is the language of all strings in at 
+least one of the two languages.
+●If L1 and L2 are regular languages, is L1 ∪ L2?The Union of Two Languages
+start  ε           
+ε           Machine for L1
+Machine for L2●If L1 and L2 are languages over the alphabet Σ, the 
+language L1 ∪ L2 is the language of all strings in at 
+least one of the two languages.
+●If L1 and L2 are regular languages, is L1 ∪ L2?The Union of Two Languages
+●If L1 and L2 are languages over the alphabet Σ, the 
+language L1 ∪ L2 is the language of all strings in at 
+least one of the two languages.
+●If L1 and L2 are regular languages, is L1 ∪ L2?
+start  ε           
+ε           Machine for L1
+Machine for L2Machine for
+L1 ∪ L2Question to 
+ponder:  where have 
+you seen this idea 
+before?Question to 
+ponder:  where have 
+you seen this idea 
+before?The Intersection of Two Languages
+●If L1 and L2 are languages over Σ, then L1 ∩ L2 is 
+the language of strings in both L1 and L2.
+●Question: If L1 and L2 are regular, is L1 ∩ L2 
+regular as well?●If L1 and L2 are languages over Σ, then L1 ∩ L2 is 
+the language of strings in both L1 and L2.
+●Question: If L1 and L2 are regular, is L1 ∩ L2 
+regular as well?
+L
+1The Intersection of Two Languages
+L
+2
+L
+1L
+2The Intersection of Two Languages
+●If L1 and L2 are languages over Σ, then L1 ∩ L2 is 
+the language of strings in both L1 and L2.
+●Question: If L1 and L2 are regular, is L1 ∩ L2 
+regular as well?
+L
+1 ∪ L
+2The Intersection of Two Languages
+●If L1 and L2 are languages over Σ, then L1 ∩ L2 is 
+the language of strings in both L1 and L2.
+●Question: If L1 and L2 are regular, is L1 ∩ L2 
+regular as well?
+L
+1 ∪ L
+2The Intersection of Two Languages
+●If L1 and L2 are languages over Σ, then L1 ∩ L2 is 
+the language of strings in both L1 and L2.
+●Question: If L1 and L2 are regular, is L1 ∩ L2 
+regular as well?
+Hey, it's De 
+Morgan's laws!Hey, it's De 
+Morgan's laws!ConcatenationString Concatenation
+●If w ∈ Σ* and x ∈ Σ*, the concatenation  of w and x, 
+denoted wx, is the string formed by tacking all the 
+characters of x onto the end of w.
+●Example: if w = quo and x = kka, the concatenation
+wx = quokka.
+●This is analogous to the + operator for strings in many 
+programming languages.
+●Some facts about concatenation:
+●The empty string ε is the identity element  for concatenation:
+wε = εw = w
+●Concatenation is associative :
+wxy = w(xy) = (wx)yConcatenation
+●The concatenation  of two languages L₁ 
+and L₂ over the alphabet Σ is the language
+L₁L₂ = { wx ∈ Σ* | w ∈ L₁ ∧ x ∈ L₂ }
+=Two views of L₁L₂:
+The set of all strings that can be made by 
+concatenating a string in L₁ with a string in L₂. 
+The set of strings that can be split into two 
+pieces: a piece from L₁ and a piece from L₂.
+Conceptually similar to the Cartesian 
+product of two sets, only with strings.Concatenation Example
+●Let Σ = { a, b, …, z, A, B, …, Z } and consider 
+these languages over Σ:
+●Noun = { Puppy, Rainbow , Whale, … }
+●Verb = { Hugs, Juggles , Loves, … }
+●The = { The }
+●The language TheNounVerbTheNoun  is
+●{ ThePuppyHugsTheWhale ,
+   TheWhaleLovesTheRainbow ,
+   TheRainbowJugglesTheRainbow , … }Concatenation
+●The concatenation  of two languages L₁ and L₂ 
+over the alphabet Σ is the language
+L₁L₂ = { wx ∈ Σ* | w ∈ L₁ ∧ x ∈ L₂ }
+●Two views of L₁L₂:
+●The set of all strings that can be made by concatenating 
+a string in L₁ with a string in L₂. 
+●The set of strings that can be split into two pieces: a 
+piece from L₁ and a piece from L₂.
+This is closely related to, but different 
+than, the Cartesian product.
+ 
+Question to ponder:  In what ways are 
+concatenations similar to Cartesian 
+products? In what ways are they 
+different?This is closely related to, but different 
+than, the Cartesian product.
+ 
+Question to ponder:  In what ways are 
+concatenations similar to Cartesian 
+products? In what ways are they 
+different?Concatenating Regular Languages
+●If L1 and L2 are regular languages, is L1L2?
+●Intuition – can we split a string w into two strings xy 
+such that x ∈ L1 and y ∈ L2?
+●Idea:
+●Run a DFA/NFA for L1 on w.
+●Whenever it reaches an accepting state, optionally hand the 
+rest of w to a DFA/NFA for L2.
+●If the automaton for L2 accepts the rest, w ∈ L₁L₂.
+●If the automaton for L2 rejects the remainder, the split was 
+incorrect.Concatenating Regular Languages
+●If L1 and L2 are regular languages, is L1L2?
+●Intuition – can we split a string w into two strings xy 
+such that x ∈ L1 and y ∈ L2?
+●Idea:
+●Run a DFA/NFA for L1 on w.
+●Whenever it reaches an accepting state, optionally hand the 
+rest of w to a DFA/NFA for L2.
+●If the automaton for L2 accepts the rest, w ∈ L₁L₂.
+●If the automaton for L2 rejects the remainder, the split was 
+incorrect.Machine for  L1start start
+Machine for  L2Concatenating Regular Languages
+●If L1 and L2 are regular languages, is L1L2?
+●Intuition – can we split a string w into two strings xy 
+such that x ∈ L1 and y ∈ L2?
+●Idea:
+●Run a DFA/NFA for L1 on w.
+●Whenever it reaches an accepting state, optionally hand the 
+rest of w to a DFA/NFA for L2.
+●If the automaton for L2 accepts the rest, w ∈ L₁L₂.
+●If the automaton for L2 rejects the remainder, the split was 
+incorrect.start start
+bookkee ep rMachine for  L1Machine for  L2Concatenating Regular Languages
+●If L1 and L2 are regular languages, is L1L2?
+●Intuition – can we split a string w into two strings xy 
+such that x ∈ L1 and y ∈ L2?
+●Idea:
+●Run a DFA/NFA for L1 on w.
+●Whenever it reaches an accepting state, optionally hand the 
+rest of w to a DFA/NFA for L2.
+●If the automaton for L2 accepts the rest, w ∈ L₁L₂.
+●If the automaton for L2 rejects the remainder, the split was 
+incorrect.start start
+bookkee ep rMachine for  L1Machine for  L2Concatenating Regular Languages
+●If L1 and L2 are regular languages, is L1L2?
+●Intuition – can we split a string w into two strings xy 
+such that x ∈ L1 and y ∈ L2?
+●Idea:
+●Run a DFA/NFA for L1 on w.
+●Whenever it reaches an accepting state, optionally hand the 
+rest of w to a DFA/NFA for L2.
+●If the automaton for L2 accepts the rest, w ∈ L₁L₂.
+●If the automaton for L2 rejects the remainder, the split was 
+incorrect.start start
+book kee ep rMachine for  L1Machine for  L2Concatenating Regular Languages
+●If L1 and L2 are regular languages, is L1L2?
+●Intuition – can we split a string w into two strings xy 
+such that x ∈ L1 and y ∈ L2?
+●Idea:
+●Run a DFA/NFA for L1 on w.
+●Whenever it reaches an accepting state, optionally hand the 
+rest of w to a DFA/NFA for L2.
+●If the automaton for L2 accepts the rest, w ∈ L₁L₂.
+●If the automaton for L2 rejects the remainder, the split was 
+incorrect.Concatenating Regular LanguagesConcatenating Regular Languages
+start    start    
+Machine for
+L1Concatenating Regular Languages
+start    start    start    start    
+Machine for
+L1Machine for
+L2Concatenating Regular Languages
+start    ε
+ε
+εstart    
+Machine for
+L1Machine for
+L2Concatenating Regular Languages
+start    ε
+ε
+εstart    
+Machine for
+L1Machine for
+L2Concatenating Regular Languages
+start    ε
+ε
+εstart    
+Machine for
+L1Machine for
+L2
+Machine for L1L2Lots and Lots of Concatenation
+●Consider the language L = { aa, b }
+●LL is the set of strings formed by concatenating pairs of 
+strings in L.
+{ aaaa, aab, baa, bb }
+●LLL is the set of strings formed by concatenating triples of 
+strings in L.
+{ aaaaaa, aaaab, aabaa, aabb, baaaa, baab, bbaa, bbb}
+●LLLL is the set of strings formed by concatenating 
+quadruples of strings in L.
+{ aaaaaaaa , aaaaaab, aaaabaa, aaaabb, aabaaaa,
+aabaab, aabbaa, aabbb, baaaaaa, baaaab, baabaa,
+baabb, bbaaaa, bbaab, bbbaa, bbbb}Language Exponentiation
+●We can define what it means to “exponentiate” a language 
+as follows:
+●L0 = {ε}
+●Intuition: The only string you can form by gluing no strings 
+together is the empty string.
+●Notice that {ε} ≠ Ø. Can you explain why?
+●Ln+1 = LLn
+●Idea: Concatenating ( n+1) strings together works by 
+concatenating n strings, then concatenating one more.
+●Question to ponder:  Why define L0 = {ε}?
+●Question to ponder:  What is Ø0?The Kleene StarThe Kleene Closure
+●An important operation on languages is the 
+Kleene Closure , which is defined as
+L* = { w ∈ Σ*  |  ∃ n ∈ ℕ. w ∈ Ln }
+●Mathematically:
+w ∈ L*     ↔     ∃ n ∈ ℕ. w ∈ Ln
+●Intuitively, L* is the language  all possible ways 
+of concatenating zero or more strings in L 
+together, possibly with repetition.
+●Question to ponder:  What is Ø*?The Kleene Closure
+If L = { a, bb }, then  L* = {
+ε,
+a, bb,
+aa, abb, bba, bbbb,
+aaa, aabb, abba, abbbb, bbaa, bbabb, bbbba, bbbbbb ,
+…
+}
+Think of L* as the set of strings you can 
+make if you have a collection of stamps – 
+one for each string in L – and you form 
+every possible string that can be made 
+from those stamps.Think of L* as the set of strings you can 
+make if you have a collection of stamps – 
+one for each string in L – and you form 
+every possible string that can be made 
+from those stamps.Reasoning about Infinity
+●If L is regular, is L* necessarily regular?
+●⚠ A Bad Line of Reasoning: ⚠
+●L0 = { ε } is regular.
+●L1 = L is regular.
+●L2 = LL is regular
+●L3 = L(LL) is regular
+●…
+●Regular languages are closed under union.
+●So the union of all these languages is 
+regular.Reasoning about InfinityReasoning about Infinity
+x              
+xReasoning about Infinity
+x              
+xReasoning about Infinity
+x              
+xReasoning about Infinity
+x              
+xReasoning about Infinity
+x              
+xReasoning about Infinity
+x              
+xReasoning about Infinity
+x              
+x≠ 2xReasoning about Infinity
+0.9 < 1Reasoning about Infinity
+0.99 < 1Reasoning about Infinity
+0.999 < 1Reasoning about Infinity
+0.9999 < 1Reasoning about Infinity
+0.9999 9 < 1Reasoning about Infinity
+0.9999 9 <≮ 1Reasoning about Infinity
+0 is finiteReasoning about Infinity
+1 is finiteReasoning about Infinity
+2 is finiteReasoning about Infinity
+3 is finiteReasoning about Infinity
+4 is finiteReasoning about Infinity
+∞ is finite
+^ notReasoning About the Infinite
+●If a series of finite objects all have some 
+property, the “limit” of that process does not  
+necessarily have that property.
+●In general, it is not safe to conclude that some 
+property that always holds in the finite case 
+must hold in the infinite case.
+●(This is why calculus is interesting).
+●So our earlier argument ( L* = L0 ∪ L1 ∪ …) isn’t 
+going to work.
+●We need a different line of reasoning.Idea:  Can we directly convert an NFA for 
+language L to an NFA for language L*?The Kleene Star
+start    
+Machine for  LThe Kleene Star
+ε start    
+Machine for  LThe Kleene Star
+ε start    
+Machine for  LThe Kleene Star
+ε start    εε
+Machine for  LThe Kleene Star
+ε start    εε
+Machine for  LThe Kleene Star
+ε start    εε
+Machine for  L
+Machine for  L*The Kleene Star
+ε start    εε
+Machine for  L
+Machine for  L*Question:  Why add the new state out front? Why not just make the old start state accepting?Question:  Why add the new state out front? Why not just make the old start state accepting?Closure Properties
+●Theorem:  If L₁ and L₂ are regular 
+languages over an alphabet Σ, then so are 
+the following languages:
+●L₁ 
+●L₁ ∪ L₂ 
+●L₁ ∩ L₂ 
+●L₁L₂
+●L₁*
+●These properties are called closure 
+properties of the regular languages . Next Time
+●Regular Expressions
+●Building languages from the ground up!
+●Thompson’s Algorithm
+●A UNIX Programmer in Theoryland.
+●Kleene’s Theorem
+●From machines to programs!

@@ -1,0 +1,212 @@
+
+Next Slide:
+
+Next Slide:
+Word Meaning
+Vector
+Semantics &
+Embeddings
+how do we represent the meaning of words in NLP systems in classical and LP applications are only representation of a word is
+Next Slide:
+What do words mean?
+Word is a string of letters or or an index in a vocabulary list. This representation is not that different from another tradition in philosophy crafts. You seen it and deduct realogic classes in which the meaning of words is represented by just spelling the word with small capital letters, representing the meaning of dog as dog. In cat, has c a t. Representing the meaning of a word by capitalizing. It is also a pretty unsatisfactory model. You might have seen a joker too, originally the semantic Barbara party. What's the meaning of life, life? Surely, we can do better than this.
+Next Slide:
+What do words mean?
+N-gram or text classification methods we've seen so far
+Words are just strings (or indices w, in a vocabulary list)
+That's not very satisfactory!
+Introductory logic classes:
+The meaning of "dog" is DOG; cat is CAT
+Vx DOG(x) — MAMMAL(x)
+Old linguistics joke by Barbara Partee in 1967:
+Q: What's the meaning of life?
+A: LIFE
+That seems hardly better!
+Better than this. What should a theory of word? Meaning do for us? Let's look at some desiderata drawn from lexical, semantics. The linguistic study of word, meaning.
+Next Slide:
+Desiderata
+What should a theory of word meaning do for us?
+Let's look at some desiderata
+From lexical semantics, the linguistic study of word
+meaning
+Meaning. Let's first consider the idea of llamas and senses. Here's a definition for the word Mouse with two senses drawn from the online thesaurus word, net. You'll notice that we have a Lemma Mouse recalled that lemmas represent the core stem of a word where the word forms, like mice represent, different individual inflected or drive forms. Notice also that Mouse has two senses since won any of numerous small rodents and cents to a hand, operated device that controls a cursor that you're all familiar with.
+Next Slide:
+Lemmas and senses
+lemma
+aoe
+<mouse (N)
+eaten 1.)any of numerous small rodents...
+~—~<2.a hand-operated device that controls
+a cursor..
+Modified from the onling thesaurus WordNet |
+I know you're with, so we say that a sense, or sometimes we call this a concept is the meaning component of a word and that lamb has can be polysemous, meaning, they can have multiple senses. So, in this case, the word Mouse has two senses.
+Next Slide:
+Lemmas and senses
+lemma
+eee
+mouse (N)
+conse” 1.)any of numerous small rodents...
+—~2.°a hand-operated device that controls
+a cursor..
+Modified from the onling thesaurus WordNet |
+A sense or “concept” is the meaning component of a word
+Lemmas can be polysemous (have multiple senses)
+Now that we've defined senses, we can see that their relationships between these senses. So, when possible relation between census is the relation of synonymy, synonyms have the same meaning in Sumrall context. So the nut we often call a hazelnut can also be called a filbert or couches, and sofas. He like synonyms for big and large or automobile in car.
+Next Slide:
+Relations between senses: Synonymy
+Synonyms have the same meaning in some or all
+contexts.
+filbert / hazelnut
+couch / sofa
+big / large
+automobile / car
+vomit / throw up
+water / H,0
+It turns out, however, that they're probably no examples of perfect synonymy, even though many aspects of their meeting might be identical. Pairs of words may still differ based on things like politeness level or slang or register or Jean.
+Next Slide:
+Relations between senses: Synonymy
+Note that there are probably no examples of perfect
+synonymy.
+Even if many aspects of meaning are identical
+Still may differ based on politeness, slang, register, genre,
+etc.
+If there are Jean, ra so consider water versus HTO. The word HTO is used in scientific context and would be inappropriate in a surfing guide or I can manual water would be more appropriate there. And this genre difference is just part of the meaning of the word or take the words big and large. While their meetings overlap, he test senses, the other doesn't have to consider the fact that we can say my big sister to me and my older sister, but my large sister. Doesn't have that same sense in practice there for the word synonym is used to describe a relationship approximate or rough synonymy.
+Next Slide:
+Relation: Synonymy?
+water/H,0
+"H,0" in a surfing guide?
+big/large
+my big sister != my large sister
+Nanami. One of the fundamental tenets of linguistics called the principle of contrast states that a difference in form is always associated with a difference in meaning.
+Next Slide:
+The Linguistic Principle of Contrast
+Difference in form > difference in meaning
+10 meaning listings for dates. Back to the eighteenth century when the Arby's yard first pointed out that language is don't seem to have perfect synonyms.
+Next Slide:
+Abbé Gabriel Girard 1718
+Re: "exact" synonyms
+"je ne crois pas qu'il y airde
+mot fynonime dans aucune
+Langue.
+[I do not believe that there
+is a synonymous word in any
+language]
+LA’ JUSTESSE
+DELA
+_ LANGUE FRANGOISE,
+ov
+LES DIFFERENTES SIGNIFICATIONS
+DES MOTS QUIPASSENT
+poux
+SYNONIMES:
+Par M.l'Abbé GIRARD C.D. M.D. DB,
+"ak
+A PARIS,
+Ch 21 AURENT D'HouRy, Imprimeure
+aire, au bas de fa rue dela
+Where is don't have many synonyms. Most words do have lots of similar words. For example, cat is not a synonym of dog but cats and dogs are certainly similar. Words, cars are similar to The bicycles and cows are similar to horses, but of course, none of those are synonyms. The notion of word similarity is very useful. In many semantic tasks knowing how similar to words are can help in Computing Houston or the meaning of two phrases or sentences are a very important component of natural language. Understanding tasks, like question, answering paraphrasing, and summer is a chinook.
+Next Slide:
+Relation: Similarity
+Words with similar meanings. Not synonyms, but sharing
+some element of meaning
+car, bicycle
+cow, horse
+Summarization one way of getting values for word similarity, is to ask humans to judge, how similar one word is to another in a number of datasets have resulted from such experiments. For example, the Simplex 999 dataset gives values on a scale from 0 to 10 from near synonyms. Like vanish disappear, which are extremely similar to pears. Like whole and agreement that scarcely seem to have anything in common
+Next Slide:
+Ask humans how similar 2 words are
+vanish _ disappear
+behave _ obey
+belief impression
+muscle bone
+modest flexible
+holes agreement
+SimLex-999 dataset (Hill et al., 2015)
+The meaning of two words can be related in ways other than similarity, one such class of connections is called word relatedness. Also traditionally called word association in Psychology. So coffee is similar to tea but coffee is not similar to cup. They share practically, no features. Coffee is a plantar. Beverage a cup is a manufactured object with a particular shape and function, but Coffee and Cup are clearly related to their Associated. Bico participating in an everyday event event of drinking coffee out of a cup. Similarly, scalpel and surgeon, not similar, but related inventively, the surgeon tends to make use of a scalpel
+Next Slide:
+Relation: Word relatedness
+Also called "word association"
+Words can be related in any way, perhaps via a semantic
+frame or field
+coffee, tea: similar
+coffee, cup: related, not similar
+Scalpel. One common kind of relatedness between words as if they belong to the same semantic field, a semantic field of the set of Words, which cover a particular semantic. Domain embarrass structured relationships with each other. For example, words might be related by being in the semantic field of hospitals. So, weird like surgeon's scalpel or nurse, or restaurants waiter, and menu, and plate, or houses door, and kitchen and bed.
+Next Slide:
+Semantic field
+Words that
+cover a particular semantic domain
+bear structured relations with each other.
+hospitals
+surgeon, scalpel, nurse, anaesthetic, hospital
+restaurants . a
+waiter, menu, plate, food, menu, chef
+door, roof, kitchen, family, bed
+Another relationship between senses is that of antonymy. These are senses that are opposites but opposites with respect to only one feature of meaning antonyms or otherwise extremely
+Next Slide:
+Relation: Antonymy
+Senses that are opposites with respect to only one
+feature of meaning
+Otherwise, they are very similar!
+Extremely similar consider, antonyms like darklighter hot colder up down, hot and cold are very similar. They're both terms that describe temperature a point on a temperature scale and all the implications that temperature has in the real world, they differ only in which point on the scale, they described more formally antonyms can define a binary opposition or be the opposite ends of a scale so we can have a scale like hot like a temperature scale and maybe hot. Is it this end and cold is at this end or they can be reverse it. So you can have words like up or down or fall arise where it's the action that the words taking it in the opposite direction.
+Next Slide:
+Relation: Antonymy
+Senses that are opposites with respect to only one
+feature of meaning
+Otherwise, they are very similar!
+dark/light short/long fast/slow rise/fall
+hot/cold up/down in/out
+More formally: antonyms can
+define a binary opposition or be at opposite ends of a scale
+long/short, fast/slow —_ \
+Be reversives: Fs \n
+rise/fall, up/down 4 \
+Nave
+Finally, words have effective, meetings are connotations the word connotation has different meanings in different fields, but here we use it to me. The aspects of a words meaning that are related to a right or a reader's emotions sentiment. Opinions, or evaluations, for example, some words have positive connotations, happy. While others have negative connotations, like sad words, whose meanings are similar in other ways, can vary in connotation, consider the difference in connotation between copy replica, reproduction. On the one hand, and fake knockoff in for jury, on the other hand, they share much of their meaning which is that there's a copy but different strongly in their commentation. some words describe positive evaluation like great and love and others negative evaluation likeI hate positive or negative evaluation language is called sentiment as we saw already and word, sentiment plays a role in important tasks, like sentiment analysis, dance detection and applications of an LP to the language of politics and consumer.
+Next Slide:
+Connotation (sentiment)
+Words have affective meanings
+Positive connotations (happy)
+Negative connotations (sad)
+Connotations can be subtle:
+Positive connotation: copy, replica, reproduction
+Negative connotation: fake, knockoff, forgery
+Evaluation (sentiment!)
+Positive evaluation (great, love)
+Negative evaluation (terrible, hate)
+Consumer reviews. Early work on a affective meaning by Osgood and collaborators found that words buried along. Three important dimensions of a effective, meaning called valence arousal, and dominance, balance the pleasantness of the stimulus arousal, the intensity of emotion, that it provokes and dominance the degree of control it exerts. So a word like love, very high and violence, it's very pleasant to positive sentimentally, positive idea. Happy also positive while toxic or nightmare are very low in valence very unpleasant, these values from the NRC valence arousal dominance lexicon from site. Muhammad arousal is the intensity of the emotion provoked by the stimulus. Not whether it's positive or negative, but how in 10It is so mellow might be very low in arousal. While elated or frenzy might be very high and arousal and dominance the degree of control. The words like power for leadership and fly very high degrees of controls while week or empty low degrees of control.
+Next Slide:
+Connotation
+Osgood et al. (1957)
+Words seem to vary along 3 affective dimensions:
+valence: the pleasantness of the stimulus
+arousal: the intensity of emotion p provoked by the stimulus
+dominance: the degre: degree of control exerted by the stimulus
+Valence
+Arousal
+Dominance
+love
+happy
+elated
+frenzy.
+powerful
+leadership
+toxic 0.008
+nightmare 0.005
+mellow 0.069
+napping 0.046
+weak 0.045
+empty 0.081
+Values from NRC VAD Lexicon (Mohammad 2018)
+So we seen the concepts are words. Senses have a complex many-to-many Association ship with words. And that these senses have relations with each other, like, synonymy antonymy, similarity relatedness and connotation.
+Next Slide:
+So far
+Concepts or word senses
+Have a complex many-to-many association with words (homonymy,
+multiple senses)
+Have relations with each other
+Synonymy
+Antonymy
+Similarity
+Relatedness
+Connotation
+we've now introduced some basic aspects of word meaning
+Next Slide:

@@ -1,0 +1,5 @@
+{
+    "paragraphs": [
+        "This lecture discussed various approaches to crash recovery, including consistency checks on reboot (fsck), ordered writes, and write-ahead logging (\u201cjournaling\u201d). Each approach has its own tradeoffs between durability, consistency, and performance. Logging is the most common approach used today, as it allows for the recovery of metadata operations after a crash. However, disks themselves can still fail, so there are still lingering problems."
+    ]
+}

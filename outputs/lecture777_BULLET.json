@@ -1,0 +1,6 @@
+{
+    "bps": [
+        "Crash recovery is the process of recovering from system crashes without losing file data or corrupting the disk. There are three main approaches to crash recovery: consistency check on reboot, ordered writes, and write-ahead logging.",
+        "Each approach has its own tradeoffs between durability, consistency and performance. Many filesystems today implement logging to recover metadata operations after a crash."
+    ]
+}

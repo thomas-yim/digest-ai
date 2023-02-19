@@ -1,0 +1,42 @@
+[
+    {
+        "question": "What is the primary focus of the article?",
+        "A": "The implications of language reclamation for identity",
+        "B": "The rhetorics surrounding language endangerment",
+        "C": "The role of language activists in language reclamation",
+        "D": "The importance of language ideologies",
+        "answer": "B"
+    },
+    {
+        "question": "What is the purpose of the metaphor of 'language suicide'?",
+        "A": "To explain the social forces underlying language shift",
+        "B": "To identify individuals as the cause of language decline",
+        "C": "To suggest that endangered language communities have full agency in the future of their languages",
+        "D": "To posit that a group that loses its language may do so by choice",
+        "answer": "D"
+    },
+    {
+        "question": "What is one way Indigenous language communities challenge the rhetoric of language endangerment?",
+        "A": "By emphasizing the historical, social, and political contexts of language decline",
+        "B": "By placing agency on the community",
+        "C": "By focusing on language extinction rather than survivance",
+        "D": "By quantifying and regulating Indigenous communities",
+        "answer": "A"
+    },
+    {
+        "question": "What is an example of a counter-strategy to language endangerment?",
+        "A": "Linguistic extraction",
+        "B": "Erasure of colonial agency",
+        "C": "Drawing attention to the barriers to language use and transmission",
+        "D": "Framing Indigenous populations as 'vanishing'",
+        "answer": "C"
+    },
+    {
+        "question": "What is one factor that contributes to language shift?",
+        "A": "Colonization",
+        "B": "Language ideologies",
+        "C": "Language activists",
+        "D": "Language documentation",
+        "answer": "A"
+    }
+]

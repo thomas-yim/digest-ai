@@ -1,0 +1,27 @@
+[
+    {
+        "term": "Crash Recovery",
+        "definition": "The process of recovering from a crash or unexpected shutdown.",
+        "starred": "False"
+    },
+    {
+        "term": "Block Cache",
+        "definition": "A space to store and quickly access recently-/ frequently-used data.",
+        "starred": "False"
+    },
+    {
+        "term": "Consistency Check",
+        "definition": "A program that runs on bootup to check the filesystem for consistency and repair any problems it can.",
+        "starred": "False"
+    },
+    {
+        "term": "Ordered Writes",
+        "definition": "Making updates in a particular order to ensure that a block is never both in the free list and in an inode.",
+        "starred": "False"
+    },
+    {
+        "term": "Write-Ahead Logging",
+        "definition": "Storing information about disk operations in an append-only log on disk.",
+        "starred": "False"
+    }
+]

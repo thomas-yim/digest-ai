@@ -1,0 +1,105 @@
+CS 103: Mathematical Foundations of Computing
+Problem Set #4
+[Caleb Liu, Justin Shen]
+February 10, 2023
+Due Friday, October 28 at 2:30 pm Pacific
+Sets can be written as {1,2,3}or as{n∈N|n≥137}.
+Multicharacter superscripts and subscripts need braces: x137x+42orx137.
+1[Caleb Liu, Justin Shen] Problem Set 4 February 10, 2023
+Problem One: Independent and Dominating Sets
+i.
+{b, g, d}
+{a, c, g}
+ii.
+Theorem: LetG= (V, E )be an arbitrary graph with the following property: every node in G is adjacent
+to at least one other node in G. Prove that if Iis an independent set in G, then V−Iis a dominating set in G.
+Proof: Consider an arbitrary graph G= (V, E )with the following property: every node in G is
+adjacent to at least one other node in G. Pick an arbitrary node x∈Gsuch that x /∈(V−I). There must
+be some node ywhere {x, y} ∈E. We want to show that y∈(V−I). Because x /∈(V−I)andx∈V, we
+know that x∈I. Because x, y} ∈E, we know that ycannot be in I. Therefore, the ymust be in V−I,
+which is what we wanted to prove.
+iii.
+I={b, g, d}
+J={d, h, f, a }
+iv.
+Theorem: Prove that if Iis a maximal independent set in G= (V, E ), then Iis a dominating set of G.
+Proof: Consider a graph, G= (V, E )and a maximal independent set in G, I. For the sake of con-
+tradiction assume that Iis not a dominating set of G. Pick an arbitrary node x∈I. Because Iis not
+a dominating set of G, we know there exists a node y /∈I, such that {x, y}/∈E. Now consider the set,
+I′=I∪ {y}. Because ydoes not form any edges with any arbitrary xin I,I′is independent. Moreover, as
+I⊆I′andI̸=I′, we know that Iis a strict subset of I′. However, this is impossible, as we stated earlier
+thatIis a maximal independent set. Therefore, our previous assumption must have been false.
+CS 103: Mathematical Foundations of Computing — Fall 2022 2[Caleb Liu, Justin Shen] Problem Set 4 February 10, 2023
+Problem Two: Friends, Strangers, Enemies, and Hats
+i.
+Theorem: In a party with 36 attendees, each person wears a hat of seven possible colors: aureolin, bole,
+chartreuse, drab, ecru, fulvous, and gamboge. Prove that you can always find three mutual friends all
+wearing the same color hat or three mutual strangers all wearing the same color hat.
+Proof: Given that there are 36 attendees and 7 possible color choices, by the pigeonhole princi-
+ple, we have that there must be at least36
+7
+of people wearing the same colored hat. Let’s consider three
+of the pairs. Because, by the Theorem on Friends and Strangers, we know that the pairs can either friends
+or strangers, we use the pigeonhole principle to claim that any person will have at least6
+2
+friends or
+strangers. Without loss of generality, assume that a person, xhas three friends: a,b, and c. Ifaandb
+to be friends, bandcto be friends, or aandcto be friends, then one of those edges plus the two edges
+connecting back to node xwould form three mutual friends. Otherwise, aandbare strangers, bandcare
+strangers, and aandcare strangers, so a,b, and cwould be mutual strangers. Overall, this gives that you
+can always find three mutual friends all wearing the same color hat or three mutual strangers all wearing
+the same color hat, as required.
+CS 103: Mathematical Foundations of Computing — Fall 2022 3[Caleb Liu, Justin Shen] Problem Set 4 February 10, 2023
+ii.
+Theorem: There’s a party with 17 attendees. For each pair of people at the party, either those people
+are strangers, those people are friends, or those people are enemies. Prove that you can always find three
+mutual friends, or three mutual strangers, or three mutual enemies.
+Proof: By the pigeonhole principle, we know for any single person, x, there are at least16
+3
+friends, strangers, or enemies. Without loss of generality, assume that xhas16
+3
+, or 6 friends. Now pick
+any person, y, such that that xis friends with y. We proceed with two possible cases:
+Case 1: If yis friends with anyone aside from x, three mutual friends are formed, as required.
+Case 2: If yis not friends with anyone other than x, by the pigeonhole principle, we know that y
+has at least5
+2
+strangers, or enemies. Without loss of generality, assume that yis strangers with5
+2
+, or 3,
+people. Consider a person zsuch that xis friends with zandyis strangers with z. We proceed with three
+cases, and for simplicity, only regarding the three people that xis friend with and yis strangers with:
+Case 2a: If zis friends with anyone besides x, three mutual friends are formed, as required.
+Case 2b: If zis strangers with anyone that yis strangers with, three mutual strangers are formed,
+as required.
+Case 2c: Otherwise, zis enemies with the other two people. We know there are two people aand
+b, such that aandbare enemies with z, strangers with y, and friends with x. No matter what relationship
+ahas with b, three mutual friends, strangers, or enemies are formed, as required.
+CS 103: Mathematical Foundations of Computing — Fall 2022 4[Caleb Liu, Justin Shen] Problem Set 4 February 10, 2023
+Problem Three: Iterated Injections
+i.
+Theorem: Prove that the sequence must contain at least one duplicate value
+Proof: Assume for the sake of contradiction that the sequence f0(a), f1(a), f2(a), ..., fk(a),did
+not have at least one duplciate value. Because fis an injection, and fis applied ktimes, there must
+have been k+ 1unique values x∈Ain the sequence, as f0(a) =a. However, this is impossible because
+|A|=k. Therefore, we have reached a contradiction, so our original assumption must have been wrong.
+The sequence must contain at least one duplicate value.
+ii.
+Theorem: Using your result from part (i), prove that fn+1(a) =a.
+Proof: Suppose for the sake of contradiction that fn+1(a)̸=a. Since fis an injection, there
+must exist some value xin the sequence such that fn+1(a) =x. Since the sequence thus far consists of
+all unique values, we know there exists some k in range 0< k≤nsuch that fk(a) =x. However, this is
+impossible because fis an injection. We have reached a contradiction so our original assumption must have
+been wrong. Thus, fn+1(a) =a.
+iii.
+Theorem: Prove that fis bijective
+Proof: Assume f:A→Ais a well-defined injection from a finite set to itself. We want to show
+thatfis also a bijection. To do so, we will show that fis surjective.
+Pick any arbitrary a∈A. From our above proofs, we know that there exists some n∈Nwhere fn+1(a) =a.
+Thus, for any arbitrary a∈A, there exists an x∈A(namely fn(a)) such that f(x) =a. Asawas selected
+arbitrarily, we’ve shown that fis surjective. Therefore, because fis injective and surjective, we’ve shown
+that it is also bijection.
+CS 103: Mathematical Foundations of Computing — Fall 2022 5[Caleb Liu, Justin Shen] Problem Set 4 February 10, 2023
+Optional Fun Problem: Forced Triangles
+Write your answer to the Optional Fun Problem here.
+CS 103: Mathematical Foundations of Computing — Fall 2022 6

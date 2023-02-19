@@ -1,0 +1,97 @@
+[
+    {
+        "term": "Crash Recovery",
+        "definition": "The process of restoring a filesystem to a consistent state after a crash or unexpected shutdown.",
+        "starred": "False"
+    },
+    {
+        "term": "Consistency Check on Reboot (fsck)",
+        "definition": "A program that is run on bootup to check the filesystem for consistency and repair any problems it can.",
+        "starred": "False"
+    },
+    {
+        "term": "Ordered Writes",
+        "definition": "A technique that requires making updates in a particular order to prevent certain kinds of inconsistencies.",
+        "starred": "False"
+    },
+    {
+        "term": "Write-Ahead Logging (Journaling)",
+        "definition": "A technique that involves writing all changes to a log before writing them to the disk, which can help restore the filesystem to a consistent state after a crash.",
+        "starred": "False"
+    },
+    {
+        "term": "Durability",
+        "definition": "The ability of a filesystem to maintain data integrity in the face of system crashes and other errors.",
+        "starred": "False"
+    },
+    {
+        "term": "Consistency",
+        "definition": "The ability of a filesystem to maintain a consistent state across multiple operations.",
+        "starred": "False"
+    },
+    {
+        "term": "Performance",
+        "definition": "The ability of a filesystem to execute operations quickly and efficiently.",
+        "starred": "False"
+    },
+    {
+        "term": "Checkpoints",
+        "definition": "A technique used to truncate long write-ahead logs.",
+        "starred": "False"
+    },
+    {
+        "term": "Idempotent",
+        "definition": "A property of a log entry that allows it to be applied multiple times without changing the result.",
+        "starred": "False"
+    },
+    {
+        "term": "Transactions",
+        "definition": "A set of operations that must be performed together in order to maintain data integrity.",
+        "starred": "False"
+    },
+    {
+        "term": "Atomicity",
+        "definition": "The property of a transaction that ensures that either all operations succeed or none of them do.",
+        "starred": "False"
+    },
+    {
+        "term": "Synchronous Writes",
+        "definition": "A technique that requires all writes to be completed before the next operation can begin.",
+        "starred": "False"
+    },
+    {
+        "term": "Resource Leaks",
+        "definition": "A type of inconsistency that can occur when resources are allocated but not freed.",
+        "starred": "False"
+    },
+    {
+        "term": "Metadata Operations",
+        "definition": "Operations that modify the structure of the filesystem, such as creating, deleting, and renaming files.",
+        "starred": "False"
+    },
+    {
+        "term": "Paper Trail",
+        "definition": "A record of all operations that have been performed, which can be used to restore the filesystem to a consistent state after a crash.",
+        "starred": "False"
+    },
+    {
+        "term": "Redo",
+        "definition": "The process of re-executing operations from the paper trail to restore the filesystem to a consistent state after a crash.",
+        "starred": "False"
+    },
+    {
+        "term": "Disk Failure",
+        "definition": "A type of hardware failure that can cause data loss or corruption.",
+        "starred": "False"
+    },
+    {
+        "term": "Data Integrity",
+        "definition": "The accuracy and consistency of data stored in a filesystem.",
+        "starred": "False"
+    },
+    {
+        "term": "Tradeoffs",
+        "definition": "The comparison of two or more competing factors in order to determine the optimal solution.",
+        "starred": "False"
+    }
+]

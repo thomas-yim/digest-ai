@@ -1,0 +1,154 @@
+CS 103: Mathematical Foundations of Computing
+Problem Set #3
+[Caleb Liu, Justin Shen]
+February 4, 2023
+Due Friday, October 21 at 2:30 pm Pacific
+Problem One is autograded. You won’t include your answers to that problem here.
+Symbols Reference
+Here are some symbols that may be useful for this problem set.
+•fis a function from AtoB:f:A→B.
+•Function composition: f◦g.
+•Power sets: ℘(()S).
+•Unions and intersections: S∪T,S∩T.
+•Cardinality: |S|.
+•Sets:{1,2,3}or{n∈N|n≥137}
+•Exponents (use curly braces if exponent is more than 1 character): x2,23x
+•Subscripts (use curly braces if subscript is more than 1 character): x0,x10
+1[Caleb Liu, Justin Shen] Problem Set 3 February 4, 2023
+Problem Two: |N|=|Z|
+i. Fill in the blanks for Problem Two, part i. below.
+•f(0) = 0.
+•f(1) =−1.
+•f(2) = 1.
+•f(3) =−2.
+•f(4) = 2.
+•f(5) =−3.
+ii.
+Theorem: Prove that fis a bijection.
+Proof: To prove that fis a bijection, we need to prove that fis injective and surjective.
+Proof of injectivity: Pick an arbitrary a∈Nandb∈N, such that a=b. We need to show
+thatf(a) =f(b). We can split the proof into two cases:
+Case 1: aandbare even. Then, ∃k1, k2∈Nsuch that a= 2k1andb= 2k2. Since a=b, we
+see
+a=b
+(2k1) = (2 k2)
+k1=k2(1)
+and thus, f(a) =k1=f(b) =k2.
+Case 2: aandbare odd. Then, ∃k1, k2∈Nsuch that a= 2k1+ 1andb= 2k2+ 1. Since a=b,
+we see
+a=b
+(2k1+ 1) = (2 k2+ 1)
+2k1= 2k2
+k1=k2(2)
+and thus f(a) =−(k1+ 1) = f(b) =−(k2+ 1).
+which is what we wanted to show.
+Proof of Surjectivity: Pick an arbitrary y∈Z. We need to show there exists an x∈Nsuch
+thatf(x) =y. We can split the proof into two cases:
+Case 1: y=kfor some k∈N. Then, x= 2kis a solution.
+Case 2: y=−(k+ 1)for some k∈N. Then, x= 2k+ 1is a solution.
+Therefore, fis surjective. Since fis both injective and surjective, it is a bijection.
+CS 103: Mathematical Foundations of Computing — Fall 2022 2[Caleb Liu, Justin Shen] Problem Set 3 February 4, 2023
+Problem Three: Strictly Increasing Functions
+i.
+f(x) =x2is not strictly increasing, but f(x) =x3is strictly increasing.
+ii.
+Theorem: Letf:Z→Zandg:Z→Zbe arbitrary strictly increasing functions. Prove that g◦fis
+strictly increasing.
+Proof: Consider any x, y∈Zsuch that x < y. We need to show that g(f(x))< g (f(y)). Be-
+cause function fis strictly increasing and x < y, we know that f(x)< f(y). Furthermore, because function
+gis strictly increasing and f(x)< f(y), we know that g(f(x))< g(f(y)), which is what we need to show.
+iii.
+Theorem: Letf:Z→Zbe an arbitrary strictly increasing function. Prove that fis injective.
+Proof: We will prove the contrapositive, that if x̸=y,f(x)̸=f(y). To do so, consider any
+x, y∈Zsuch that x̸=y. We want to show that f(x)̸=f(y). As x̸=y, either x < yory < x. Assume,
+without loss of generality, that x < y. Because x < yandfis strictly increasing, we know that f(x)< f(y).
+Because f(x)< f(y),f(x)̸=f(y), which is what we needed to show.
+iv.
+Theorem: Letf:Z→Zbe a strictly increasing function and consider any integers xandy. Prove that
+iff(x) =y, and f(y) =x, then x=y.
+Proof: We will take the contrapositive of the above theorem, namely if x̸=y, then f(x)̸=yor
+f(y)̸=x. For the sake of contradiction, consider any x, y∈Zsuch that x̸=yandf(x) =yandf(y) =x.
+Asx̸=y, either x < yory < x. Assume, without loss of generality, that x < y. Because x < y
+andfis strictly increasing, we know that f(x)< f(y). We then see
+f(x)< f(y)
+y < x(3)
+This is impossible because x < y. We have reached a contradiction, so our assumption must have been
+wrong, so if x̸=y, then f(x)̸=yorf(y)̸=x, which is what we wanted to show.
+CS 103: Mathematical Foundations of Computing — Fall 2022 3[Caleb Liu, Justin Shen] Problem Set 3 February 4, 2023
+Problem Four: Eventual Bijections
+i. Fill in the blanks for Problem Four, part i. below.
+•f3(2) = 9.
+•f137(1) = 1.
+•f0(137) = 137 .
+ii.
+Theorem: Letf:A→Abe a function. Prove that if f3is surjective, then fis surjective.
+Proof: Pick an arbitrary y∈A. We need to show that there exists an x∈A, such that f(x) =y. Because
+f3(x)is surjective, we know that there exists an a∈A, such that f(f(f(a))) = y. Now, let x=f(f(a)).
+We see that
+f(f(f(a))) = y
+f(x) =y(4)
+which is what we wanted to prove.
+iii.
+Theorem: Letf:A→Abe a function. Prove that if f3is injective, then fis injective.
+Proof: We will prove the the contrapositive: if fis not injective, f3is not injective. Pick an
+a, b∈A, such that a̸=b. We want to show that f3(a)̸=f3(b). Because fis injecitve and a̸=b, we know
+thatf(a)̸=f(b). We then see
+f(a)̸=f(b)
+f(f(a))̸=f(f(b))
+f(f(f(a)))̸=f(f(f(b)))(5)
+which is what we needed to show.
+CS 103: Mathematical Foundations of Computing — Fall 2022 4[Caleb Liu, Justin Shen] Problem Set 3 February 4, 2023
+Problem Five: Understanding Diagonalization
+i.
+N
+ii.
+Any element that is not the empty set and that does not contain all the elements in the domain (i.e. {5})
+iii.
+This set contains all natural numbers that are < n.
+iv.
+All natural numbers that are < n−1
+v.
+f(n) ={n∈N|2n−1}. This function produces all natural numbers that are odd. Therefore, the set D will
+contain any natural number that is no odd, and not contain any number that is odd (even natural numbers).
+CS 103: Mathematical Foundations of Computing — Fall 2022 5[Caleb Liu, Justin Shen] Problem Set 3 February 4, 2023
+Problem Six: Simplifying Cantor’s Theorem?
+The incorrect statement is the following: "Since fis not surjective, it is not a bijection. Thus |S| ̸=|℘(S)|."
+fnot being surjective does not prove that |S| ̸=|℘(S)|because there could be some other function that is
+bijective. In order to prove that |S| ̸=|℘(S)|, we must pick an arbitrary function f:S→℘(S)and prove
+that it is not bijective.
+CS 103: Mathematical Foundations of Computing — Fall 2022 6[Caleb Liu, Justin Shen] Problem Set 3 February 4, 2023
+Problem Seven: Proofs on Sets
+iii.
+Theorem: For all sets AandB, if℘(A) =℘(B), then A=B.
+Proof: For the sake of contradiction, assume that ℘(A) = ℘(B)andA̸=B. Therefore, there
+exists an x∈A, where x /∈B. Ifx∈A,{x} ∈℘(A). Because ℘(A) =℘(B),{x} ∈℘(B). However, this is
+impossible because x /∈B. We have reached a contradiction, so our previous assumption must be false.
+CS 103: Mathematical Foundations of Computing — Fall 2022 7[Caleb Liu, Justin Shen] Problem Set 3 February 4, 2023
+Problem Eight: The Universal Set
+i.
+Theorem: Prove that if AandBare arbitrary subsets where A⊆B, then |A| ≤ |B|.
+Proof: Pick two arbitrary subsets AandBwhere A⊆B. Secondly, consider the function f:A→B
+where f(x) =x. We want to show that fis an injection.
+First, we’ll show that fis a well-defined function. Because A⊆B, we know that ∀x(x∈A→x∈B).
+Therefore, for any x∈A, we have f(x) =x∈B
+Second, we’ll show that fis injective. Pick any x1, x2,∈Awhere f(x1) = f(x2). We need to show
+thatx1=x2. Since f(x1) =f(x2), we see by definition of fthatx1=x2, as required.
+Because fis an injection, it follows that |A| ≤ |B|.
+ii.
+Theorem: LetUbe the universal set discussed in problem 8’s description. Using your result from (i),
+prove that if U exists, then |℘(U)| ≤ |U|.
+Proof: Consider the function f:℘(U)→Uwhere f(x) = x. Because we proved earlier that if
+A⊆B, then |A| ≤ |B|, we want to prove that ℘(U)⊆U.
+Assuming that Uexists, we know that ∀x(x∈U). It follows that for any x∈℘(U),x∈U.
+Therefore, ℘(U)⊆U. Because ℘(U)⊆U, we know from the earlier proof that |℘(U)| ≤ |U|.
+iii.
+Write your answer to Problem Eight, part iii. here.
+iv.
+Theorem: LetUbe the universal set discussed in problem 8’s description. Prove that Udoes not exist.
+Proof: Above, we proved that if Uexists, then |℘(U)| ≤ | U|. By contrapositive, if |℘(U)|>|U|,
+then Udoes not exist. Thus, we need to show that |℘(U)|>|U|.
+By Cantor’s Theorem, we know that because Uis a set, |U|<|℘(U)|, which is what we needed to
+show.
+Optional Fun Problem: Infinity Minus Two
+Write your answer to the Optional Fun Problem here.
+CS 103: Mathematical Foundations of Computing — Fall 2022 8
