@@ -4,7 +4,11 @@ For M1 macs call
 CONDA_SUBDIR=osx-64 conda env create -f environment.yml
 
 Otherwise call
-CONDA_SUBDIR=osx-64 conda env create -f environment.yml
+conda env create -f environment.yml
+
+Then to enter the environment call
+
+`conda activate digest`
 
 You need an openai key that will go in config_keys.py under the field OPENAI_KEY=""
 
