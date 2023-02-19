@@ -19,3 +19,4 @@ Consult other repo for the website.
 Run the flask app to setup the api at a port and forward a public address to the localhost using ngrok
 `python test_api.py`
 `ngrok http 8000`
+Then you will want to copy that link to the fetch request in the react app in the other repo.
